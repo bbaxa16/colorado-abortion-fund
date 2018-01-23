@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+app.get('/', (req, res)=> {
+  res.render(index.html);
+})
+
 const mongoUri = process.env.MONGODB_URI
 
 mongoose.connect(mongoUri);
